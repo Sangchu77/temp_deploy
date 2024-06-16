@@ -15,5 +15,9 @@ if 'music_result' not in st.session_state:
     st.session_state['music_result'] = pd.DataFrame()
 
 if st.button('분석'):
-    st.session_state['final_dataframe'] = recommend([user_input])
-    print(st.session_state['final_dataframe'])
+    temp = recommend([user_input])
+
+    for i, row in temp.iterrows():
+       st.write(f"추천 레시피: {row['best_name']} (점수: {scores[i]}), {row['index']}, {row['name']}")
+       recipe_url = f"https://www.10000recipe.com/recipe/{row['index']}"
+       st.markdown(f"[레시피 보러가기]({recipe_url})")
