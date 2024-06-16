@@ -5,7 +5,7 @@ import pandas as pd
 # 레시피 데이터 읽기
 
 def recommend(user_ingredients):
-    recipe_df = pd.read_csv("data/Last_recipe.csv")
+    recipe_df = pd.read_csv("temp.csv")
 
     # TF-IDF 벡터라이저 생성
     tfidf = TfidfVectorizer(token_pattern=r'[^|]+')
