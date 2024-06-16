@@ -15,7 +15,7 @@ if 'music_result' not in st.session_state:
     st.session_state['music_result'] = pd.DataFrame()
 
 if st.button('분석'):
-    temp = recommend([user_input])
+    temp = recommend(user_input.split(','))
 
     for i, row in temp.iterrows():
        st.write(f"추천 레시피: {row['best_name']}")
