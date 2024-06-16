@@ -16,6 +16,4 @@ if 'music_result' not in st.session_state:
 
 if st.button('분석'):
     st.session_state['final_dataframe'] = recommend([user_input])
-
-    if st.session_state['final_dataframe']:
-        print(st.session_state['final_dataframe'])
+    print(st.session_state['final_dataframe'])
