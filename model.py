@@ -18,7 +18,7 @@ def recommend(user_ingredients):
 
     # 상위 N개 레시피 추천
     N = 20
-    top_indices = scores.argsort()[::-1][N:]
+    top_indices = scores.argsort()[::-1][:N]
     top_recipes = recipe_df.iloc[top_indices]
 
     return top_recipes
