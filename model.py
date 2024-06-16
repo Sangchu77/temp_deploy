@@ -12,6 +12,7 @@ def recommend(user_ingredients):
     tfidf_matrix = tfidf.fit_transform(recipe_df['Ingr2'])
 
     user_ingredients_str = '|'.join(list(user_ingredients))
+    print(user_ingredients_str)
     user_vector = tfidf.transform([user_ingredients_str])
 
     scores = cosine_similarity(tfidf_matrix, user_vector).flatten()
