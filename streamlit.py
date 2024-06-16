@@ -7,7 +7,7 @@ from model import recommend
 st.title('냉장고 재료 기반 레시피 추천 서비스')
 
 user_input = st.text_area('사용자가 가지고 있는 재료를 입력하세요.(ex 돼지고기, 소금, 설탕)')
-
+print(user_input)
 if 'analysis_result' not in st.session_state:
    st.session_state['final_dataframe']= []
 
